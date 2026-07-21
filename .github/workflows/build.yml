@@ -1,0 +1,19 @@
+name: vector
+
+on:
+  push
+
+jobs:
+  vector:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Build Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+
+      - name: vector
+        run: make
